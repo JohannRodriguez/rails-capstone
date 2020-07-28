@@ -1,0 +1,10 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<%= form_for @user do |f| %>
+  User name: <%= f.text_field :name, placeholder: 'Create username' %>
+  <%= f.submit %>
+<% end %>
+<%= link_to 'Sign Up', new_session_path %>

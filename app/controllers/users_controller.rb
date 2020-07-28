@@ -10,9 +10,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash.alert = 'User successfully created'
       redirect_to root_path
     else
-      flash.now[:alert] = 'User not created'
+      flash.alert = 'Invalid username'
+      redirect_to root_path
     end
   end
 
