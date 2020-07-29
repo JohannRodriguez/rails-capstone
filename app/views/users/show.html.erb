@@ -1,0 +1,7 @@
+<section>
+  <% @user.articles.each do |a| %>
+   <article class="">
+     <h4><%= link_to a.title, article_path(:id => a.id) %></h4>
+   </article>
+  <% end %>
+</section>
