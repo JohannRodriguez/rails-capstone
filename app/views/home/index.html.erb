@@ -6,19 +6,27 @@
 <br>
 <div class="most_voted_article columns is-gapless">
   <a class="article_showcase column is-three-quarters" href="<%= article_path(id: most_voted_article.id) %>">
+    <div class="flex_uperline">
+      <div class="most_voted_border_1"></div>
+      <div class="most_voted_border_2"></div>
+    </div>
     <h1 class="most_voted_article_title"><%= most_voted_article_title %></h1>
     <img src="<%= most_voted_article_img %>">
   </a>
   <div class="column">
-
+    <img src="<%= most_voted_article_img %>">
   </div>
 </div>
 <div class="columns is-gapless categories_articles">
   <% @categories.order(:priority).each do |category| %>
-  <article class="article_showcase column">
-    <h2 class="category_name"><%= category_name_display(category) %></h2>
-    <p class="category_article_title"><%= index_latest_category_article(category) %></p>
-    <img src="<%= index_latest_category_article_image(category) %>">
-  </article>
+    <% if category.priority <= 2 %>
+      <article class="article_showcase column">
+        <a href="<%= category_path(id: category.id)%>">
+          <h2 class="category_name"><%= category.name %></h2>
+          <p class="category_article_title"><%= index_latest_category_article(category) %></p>
+          <img src="<%= index_latest_category_article_image(category) %>">
+        </a>
+      </article>
+    <% end %>
   <% end %>
 </div>

@@ -2,10 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .most_voted_article {
-  background-color: blue;
   height: 500px;
   margin-bottom: 0 !important;
   margin-top: 24px !important;
+}
+
+.categories_articles a {
+
+}
+
+.flex_uperline {
+  display: flex;
+}
+
+.most_voted_border_1 {
+  background-color: #e9062f;
+  height: 4px;
+  width: 35%;
+}
+
+.most_voted_border_2 {
+  background-color: #837e7a;
+  height: 4px;
+  width: 100%;
 }
 
 .categories_articles .article_showcase {
@@ -22,22 +41,22 @@
   height: 500px;
 }
 
-.categories_articles img {
-  height: 200px
+.most_voted_article .article_showcase img {
+  height: 100%;
 }
 
-.most_voted_article a {
-  background-color: yellow;
+.categories_articles img {
+  height: 200px
 }
 
 .article_showcase {
   position: relative;
   width: 100%;
-  background-color: red;
 }
 
 .article_showcase img {
   width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -45,16 +64,19 @@ h1 {
 }
 
 .most_voted_article_title {
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   position: absolute;
   margin-bottom: 25px;
   margin-left: 15px;
+  z-index: 1;
+  color: #fa5f00;
+  font-weight: bold;
 }
 
 .category_name {
   position: absolute;
-  border-bottom: 3px solid yellow;
+  border-bottom: 3px solid #f9f909;
   font-weight: bold;
   margin-left: 15px;
   margin-top: 10px;
@@ -74,4 +96,15 @@ p {
   margin-left: 15px;
   margin-bottom: 15px;
   font-weight: bold;
+}
+
+.categories_articles a:hover {
+  position: absolute;
+  color: #fa5f00;
+  width: 108%;
+  height: 108%;
+  z-index: 2;
+  top: -4%;
+  left: -4%;
+  transition: 0.5s;
 }
