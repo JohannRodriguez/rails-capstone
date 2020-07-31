@@ -16,9 +16,13 @@
  */
 
  body {
-   margin: 20px
+  margin: 5px 10px;
  }
 
  nav {
-   background-color: grey
+   position: absolute;
+   background-color: grey;
+   width: calc(100% - 20px);
+   z-index: 3;
+   margin: 0 !important;
  }

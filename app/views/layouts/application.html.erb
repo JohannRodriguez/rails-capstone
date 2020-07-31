@@ -22,12 +22,16 @@
       </div>
       <div class="column">
         <div class="columns">
-          <div class="column"><%= sign_up %></div>
-          <div class="column"><%= sign_in %></div>
-          <div class="column"><%= username_display %></div>
-          <div class="column"><%= index_saved_articles %></div>
-          <div class="column"><%= new_article %></div>
-          <div class="column"><%= logout %></div>
+          <% unless session[:current_user_id].nil? %>
+            <div class="column"><%= link_to 'Profile', user_path(id: session[:current_user_id]) %></div>
+            <div class="column"><%= link_to 'Favorites', saved_articles_index_path(id: session[:current_user_id]) %></div>
+            <div class="column"><%= link_to 'New article', new_article_path %></div>
+            <div class="column"><%= link_to 'Log out', delete_session_path, method: :delete %></div>
+          <% end %>
+          <% if session[:current_user_id].nil? %>
+            <div class="column"><%= link_to 'Sign Up', new_user_path %></div>
+            <div class="column"><%= link_to 'Sign In', new_session_path %></div>
+          <% end %>
         </div>
       </div>
     </nav>

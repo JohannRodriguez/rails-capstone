@@ -1,10 +1,14 @@
 module HomeHelper
-  def most_voted_article_name
-    link_to most_voted_article.title, article_path(id: most_voted_article.id)
+  def most_voted_article_title
+    if Vote.all.empty?
+      'There are no votes in any article'
+    else
+      most_voted_article.title
+    end
   end
 
   def most_voted_article_img
-    most_voted_article.image
+    return most_voted_article.image unless Vote.all.empty?
   end
 
   def category_name_display(category)
@@ -26,18 +30,11 @@ module HomeHelper
       category.articles.order("created_at").last.image
     end
   end
-  
+
   private
 
   def most_voted_article
-    @most_voted = 0
-    @displayed_article = nil
-    @article.order("created_at").each do |a|
-      if a.votes.count >= @most_voted
-        @most_voted = a.votes.count
-        @displayed_article = a
-      end
-    end
-    @displayed_article
+    @most_votes = Vote.group(:article_id).order(count_all: :desc).count.first
+    return Article.find_by_id(@most_votes[0])
   end
 end

@@ -4,10 +4,21 @@
   </div>
 <% end %>
 <br>
-<h1><%= most_voted_article_name %></h1>
-<img src="<%= most_voted_article_img %>" width="150px">
-<% @categories.each do |category| %>
-  <h2><%= category_name_display(category) %></h2>
-  <p><%= index_latest_category_article(category) %></p>
-  <img src="<%= index_latest_category_article_image(category) %>" width="150px">
-<% end %>
+<div class="most_voted_article columns is-gapless">
+  <a class="article_showcase column is-three-quarters" href="<%= article_path(id: most_voted_article.id) %>">
+    <h1 class="most_voted_article_title"><%= most_voted_article_title %></h1>
+    <img src="<%= most_voted_article_img %>">
+  </a>
+  <div class="column">
+
+  </div>
+</div>
+<div class="columns is-gapless categories_articles">
+  <% @categories.order(:priority).each do |category| %>
+  <article class="article_showcase column">
+    <h2 class="category_name"><%= category_name_display(category) %></h2>
+    <p class="category_article_title"><%= index_latest_category_article(category) %></p>
+    <img src="<%= index_latest_category_article_image(category) %>">
+  </article>
+  <% end %>
+</div>
