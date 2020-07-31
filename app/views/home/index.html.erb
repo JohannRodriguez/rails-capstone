@@ -1,0 +1,13 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<br>
+<h1><%= most_voted_article_name %></h1>
+<img src="<%= most_voted_article_img %>" width="150px">
+<% @categories.each do |category| %>
+  <h2><%= category_name_display(category) %></h2>
+  <p><%= index_latest_category_article(category) %></p>
+  <img src="<%= index_latest_category_article_image(category) %>" width="150px">
+<% end %>

@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsCapstone</title>
+    <title>Game articles</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
   <body>
-    <%= link_to username_display, user_path(:id => session[:current_user_id]) %>
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Sign Up', new_user_path %>
-    <%= link_to 'Sign In', new_session_path %>
+    <nav class="columns">
+      <div class="column">
+        <p>Company logo</p>
+      </div>
+      <div class="column">
+        <div class="columns">
+          <div class="column"><%= link_to 'Home', root_path %></div>
+          <div class="column"><%= link_to 'Articles', articles_path %></div>
+          <div class="column"><%= link_to 'Categories', categories_path %></div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns">
+          <div class="column"><%= sign_up %></div>
+          <div class="column"><%= sign_in %></div>
+          <div class="column"><%= username_display %></div>
+          <div class="column"><%= index_saved_articles %></div>
+          <div class="column"><%= new_article %></div>
+          <div class="column"><%= logout %></div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

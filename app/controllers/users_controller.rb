@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    current_user = User.find_by_id(session[:current_user_id])
+    @current_user = User.find_by_id(session[:current_user_id])
   end
 
   def new
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash.alert = 'Invalid username'
-      redirect_to root_path
+      redirect_to new_user_path
     end
   end
 

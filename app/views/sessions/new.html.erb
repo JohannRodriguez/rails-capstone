@@ -3,7 +3,7 @@
     <%= msg %>
   </div>
 <% end %>
-<%= form_for :session, url: sessions_create_path() do |f| %>
+<%= form_for :session, url: sessions_path() do |f| %>
   User name: <%= f.text_field :name, placeholder: 'Username' %>
   <%= f.submit %>
 <% end %>

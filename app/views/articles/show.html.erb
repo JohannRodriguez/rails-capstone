@@ -1,2 +1,22 @@
-<h1>Articles#create</h1>
-<p>Find me in app/views/articles/create.html.erb</p>
+<body>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+  <h1><%= @user.name %></h1>
+  <h1><%= @article.title %></h1>
+  <p><%= @article.text %></p>
+  <img src="<%= @article.image %>" width="150px">
+  <p><%= @article.votes.count %> <%= multiple_votes? %></p> <br>
+  <% @article.categories.each do |category| %>
+    <h3><%= category.name %></h3>
+  <% end %>
+  <%= vote %> <br>
+  <% @category.each do |c| %>
+    <%= add_category(c) %>
+  <% end %>
+  <p><%= save_article_show %></p>
+  <p><%= edit_article %></p>
+  <p><%= delete_article %></p>
+</body>

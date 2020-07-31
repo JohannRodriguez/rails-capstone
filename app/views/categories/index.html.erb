@@ -1,0 +1,7 @@
+<body>
+  <% @categories.each do |category| %>
+    <h2><%= link_to category.name, category_path(id: category.id) %></h2>
+    <p><%= latest_category_article(category) %></p>
+    <img src="<%= latest_category_article_image(category) %>" alt="">
+  <% end %>
+</body>
