@@ -1,10 +1,19 @@
 <body>
-  <h1><%= @category.name %></h1>
-  <% @category.articles.order("created_at").reverse_order.each do |article| %>
-    <h2><%= link_to article.title, article_path(id: article.id) %></h2>
-    <h3><%= User.find_by_id(article.author_id).name %></h3>
-    <img src="<%= article.image %>" alt="" width="150px">
-    <p><%= article.votes.count %> <%= category_votes(article) %></p>
-    <p><%= category_article_vote(article) %></p>
-  <% end %>
+  <section class="category_section is-gapless columns is-multiline">
+    <% @category.articles.order("created_at").reverse_order.each do |article| %>
+      <article class="category_article_show is-gapless columns column is-half">
+        <a class="column" href="<%= article_path(id: article.id) %>">
+          <img src="<%= article.image %>">
+        </a>
+        <div class="column category_article_info">
+          <h1><%= @category.name %></h1>
+          <h2><%= link_to article.title, article_path(id: article.id) %></h2>
+          <p><%= article.text %></p>
+          <h3><%= User.find_by_id(article.author_id).name %></h3>
+          <p class="category_votes"><%= article.votes.count %> <%= category_votes(article) %></p>
+          <p class="category_vote"><%= category_article_vote(article) %></p>
+         </div>
+      </article>
+    <% end %>
+  </section>
 </body>
