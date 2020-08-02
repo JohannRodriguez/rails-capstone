@@ -23,13 +23,13 @@ module CategoriesHelper
   end
 
   def category_save_article(article)
-      return link_to (fa_icon "heart"), new_session_path, class: 'favorite_highlight' if session[:current_user_id].nil?
-      @favorite = @user.saved_articles.where(article_id: article.id)
-      if !@favorite.empty?
-        link_to (fa_icon "heart"), save_article_path(id: @favorite.first.id, category: params[:id]), method: :delete, class: 'favorite_shadow'
-      else
-        link_to (fa_icon "heart"), save_articles_path(article_id: article.id, category: params[:id]), method: :post, class: 'favorite_highlight'
-      end
+    return link_to (fa_icon "heart"), new_session_path, class: 'favorite_highlight' if session[:current_user_id].nil?
+    @favorite = @user.saved_articles.where(article_id: article.id)
+    if !@favorite.empty?
+      link_to (fa_icon "heart"), save_article_path(id: @favorite.first.id, category: params[:id]), method: :delete, class: 'favorite_shadow'
+    else
+      link_to (fa_icon "heart"), save_articles_path(article_id: article.id, category: params[:id]), method: :post, class: 'favorite_highlight'
+    end
   end
 
   def category_votes(article)

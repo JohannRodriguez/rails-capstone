@@ -15,10 +15,10 @@
     <h3><%= category.name %></h3>
     <% end %>
     <%= vote %> <br>
-    <% @category.each do |c| %>
-    <%= add_category(c) %>
-    <% end %>
     <p><%= save_article_show %></p>
+    <% @category.each do |c| %>
+      <%= add_category(c) %>
+    <% end %>
     <p><%= edit_article %></p>
     <p><%= delete_article %></p>
   </body>

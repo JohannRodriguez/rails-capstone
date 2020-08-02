@@ -8,8 +8,8 @@
       </div>
     <% end %>
     <br>
-      <div class="top_articles columns is-gapless">
-        <article class="most_voted_article column is-three-quarters">
+      <div class="top_articles columns is-gapless is-multiline">
+        <article class="most_voted_article column is-three-quarters-desktop">
           <div class="flex_uperline">
             <div class="most_voted_border_1"></div>
             <div class="most_voted_border_2"></div>
@@ -28,10 +28,10 @@
           </a>
         </article>
       </div>
-    <div class="columns is-gapless categories_articles">
+    <div class="columns is-gapless is-multiline categories_articles">
       <% @categories.order(:priority).each do |category| %>
         <% if category.priority <= 2 %>
-          <article class="article_showcase column">
+          <article class="article_showcase column is-one-quarter">
             <a href="<%= category_path(id: category.id)%>">
               <h2 class="category_name"><%= category.name %></h2>
               <p class="category_article_title"><%= index_latest_category_article(category) %></p>

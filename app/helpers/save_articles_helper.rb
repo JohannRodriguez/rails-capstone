@@ -7,8 +7,20 @@ module SaveArticlesHelper
     end
   end
 
+  def favorite_link(article_record)
+    if find_article(article_record).nil?
+      articles_path
+    else
+      article_path(id: find_article(article_record).id)
+    end
+  end
+
   def saved_article_image(article_record)
-    return find_article(article_record).image unless article_record.article_id.nil?
+    if article_record.article_id.nil?
+      'https://i.ibb.co/YhBBFvR/anf2.jpg'
+    else
+      find_article(article_record).image
+    end
   end
 
   def find_article(article_record)

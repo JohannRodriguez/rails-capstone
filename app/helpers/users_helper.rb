@@ -4,4 +4,16 @@ module UsersHelper
 
     'votes'
   end
+
+  def profile_article_place(index)
+    if index == 0
+      'profile_second_article'
+    else
+      'profile_article'
+    end
+  end
+
+  def category_name(category)
+    category.name
+  end
 end

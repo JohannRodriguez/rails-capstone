@@ -1,3 +1,66 @@
 // Place all the styles related to the save_articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favorite_article {
+  margin-top: 48px !important;
+  height: 380px;
+  background-color: white;
+}
+
+.favorite_article img {
+  width: 100%;
+  height: 250px;
+}
+
+.favorite_article_title a {
+  color: #f99c00;
+  font-weight: bold;
+}
+
+.favorite_author {
+  margin-left: 30px;
+}
+
+.favorite_article_title,
+.favorite_author {
+  color: #4e443f;
+  font-weight: bold;
+}
+
+.favorite_saved_articles {
+  margin-top: 20px !important;
+  margin-left: 0 !important;
+  position: absolute;
+  font-size: 30px;
+}
+
+.favorite_saved_at {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-bottom: 7px;
+  color: black
+}
+
+.favorites_article_info {
+  padding: 7px 20px;
+  border: 0.5px solid #fa5f00;
+  border-bottom: 2px solid #fa5f00;
+  border-top: none;
+  height: 130px;
+  position: relative;
+  top: -6px;
+}
+
+.favorites_article_author_info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favorite_author a:hover,
+.favorite_article_title a:hover {
+  color: #fa5f00;
+  text-decoration: underline;
+}
