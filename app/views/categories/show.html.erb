@@ -1,19 +1,29 @@
-<body>
-  <section class="category_section is-gapless columns is-multiline">
-    <% @category.articles.order("created_at").reverse_order.each do |article| %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <section class="category_section is-gapless columns is-multiline">
+      <% @category.articles.order("created_at").reverse_order.each do |article| %>
       <article class="category_article_show is-gapless columns column is-half">
         <a class="column" href="<%= article_path(id: article.id) %>">
-          <img src="<%= article.image %>">
+          <img src="<%= article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
         </a>
         <div class="column category_article_info">
           <h1><%= @category.name %></h1>
           <h2><%= link_to article.title, article_path(id: article.id) %></h2>
-          <p><%= article.text %></p>
-          <h3><%= User.find_by_id(article.author_id).name %></h3>
-          <p class="category_votes"><%= article.votes.count %> <%= category_votes(article) %></p>
-          <p class="category_vote"><%= category_article_vote(article) %></p>
-         </div>
+          <div class="category_truncate_text">
+            <%= link_to article.text, article_path(id: article.id) %>
+          </div>
+          <div class="category_vote_section">
+            <div class="columns">
+              <h3 class="column"><%= User.find_by_id(article.author_id).name %></h3>
+              <p class="category_votes column"><%= article.votes.count %> <%= category_votes(article) %></p>
+            </div>
+            <%= category_article_vote(article) %>
+            <%= category_save_article(article) %>
+          </div>
+        </div>
       </article>
-    <% end %>
-  </section>
-</body>
+      <% end %>
+    </section>
+  </body>
+</html>

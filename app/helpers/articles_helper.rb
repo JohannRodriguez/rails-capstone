@@ -24,7 +24,7 @@ module ArticlesHelper
 
   def add_category(category)
     if @article.author_id == session[:current_user_id]
-      if category.relatecategories.where(article_id: @article.id).empty?
+      if category.relate_categories.where(article_id: @article.id).empty?
         link_to category.name, categories_create_path(category_id: category.id, article_id: @article.id), method: :post
       else
         link_to category.name, delete_category_path(id: category.id, article_id: @article.id), method: :delete

@@ -1,11 +1,16 @@
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
-<%= form_for @article do |f| %>
-  Title: <%= f.text_field :title %>
-  Body: <%= f.text_field :text %>
-  Image url: <%= f.text_field :image %>
-  <%= f.submit %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+    <% end %>
+    <%= form_for @article do |f| %>
+    Title: <%= f.text_field :title %>
+    Body: <%= f.text_field :text %>
+    Image url: <%= f.text_field :image %>
+    <%= f.submit %>
+    <% end %>
+  </body>
+</html>

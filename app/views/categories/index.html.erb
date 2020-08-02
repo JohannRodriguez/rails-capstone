@@ -1,9 +1,12 @@
-<body>
-  <% @categories.each do |category| %>
-  <article class="category_show">
-    <h2><%= link_to category.name, category_path(id: category.id) %></h2>
-    <p><%= latest_category_article(category) %></p>
-    <img src="<%= latest_category_article_image(category) %>" width="150px">
-  </article>
-  <% end %>
-</body>
+<!DOCTYPE html>
+<html>
+  <body>
+    <% @categories.each do |category| %>
+    <article class="category_show">
+      <h2><%= link_to category.name, category_path(id: category.id) %></h2>
+      <p><%= latest_category_article(category) %></p>
+      <img src="<%= latest_category_article_image(category) %>" width="150px" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+    </article>
+    <% end %>
+  </body>
+</html>

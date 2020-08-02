@@ -1,22 +1,25 @@
-<body>
-  <% flash.each do |type, msg| %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <% flash.each do |type, msg| %>
     <div>
       <%= msg %>
     </div>
-  <% end %>
-  <h1><%= @user.name %></h1>
-  <h1><%= @article.title %></h1>
-  <p><%= @article.text %></p>
-  <img src="<%= @article.image %>" width="150px">
-  <p><%= @article.votes.count %> <%= multiple_votes? %></p> <br>
-  <% @article.categories.each do |category| %>
+    <% end %>
+    <h1><%= @user.name %></h1>
+    <h1><%= @article.title %></h1>
+    <p><%= @article.text %></p>
+    <img src="<%= @article.image %>" width="150px" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+    <p><%= @article.votes.count %> <%= multiple_votes? %></p> <br>
+    <% @article.categories.each do |category| %>
     <h3><%= category.name %></h3>
-  <% end %>
-  <%= vote %> <br>
-  <% @category.each do |c| %>
+    <% end %>
+    <%= vote %> <br>
+    <% @category.each do |c| %>
     <%= add_category(c) %>
-  <% end %>
-  <p><%= save_article_show %></p>
-  <p><%= edit_article %></p>
-  <p><%= delete_article %></p>
-</body>
+    <% end %>
+    <p><%= save_article_show %></p>
+    <p><%= edit_article %></p>
+    <p><%= delete_article %></p>
+  </body>
+</html>

@@ -1,17 +1,22 @@
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
-<section class="articles_index_section">
-  <% @article.order('created_at').reverse_order.each do |article| %>
-    <article class="articles_index_article">
-      <h3><%= link_to article.title, article_path(id: article.id) %></h3>
-      <h4><%= article.author.name %></h4>
-      <% article.categories.each do |category| %>
+<!DOCTYPE html>
+<html>
+  <body>
+    <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+    <% end %>
+    <section class="articles_index_section">
+      <% @article.order('created_at').reverse_order.each do |article| %>
+      <article class="articles_index_article">
+        <h3><%= link_to article.title, article_path(id: article.id) %></h3>
+        <h4><%= article.author.name %></h4>
+        <% article.categories.each do |category| %>
         <p><%= category.name %></p>
+        <% end %>
+        <img src="<%= article.image %>" width="150px" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+      </article>
       <% end %>
-      <img src="<%= article.image %>" width="150px">
-    </article>
-  <% end %>
-</section>
+    </section>
+  </body>
+</html>

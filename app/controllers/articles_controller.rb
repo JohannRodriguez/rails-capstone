@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find_by_id(params[:id])
-    @article.relatecategories.destroy_all
+    @article.relate_categories.destroy_all
     @article.saved_articles.delete_all
     Vote.where(article_id: @article.id).destroy_all
     @article.destroy
