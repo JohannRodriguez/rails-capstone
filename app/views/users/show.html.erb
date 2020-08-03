@@ -2,12 +2,12 @@
 <html>
   <body>
     <section class="user_profile columns is-multiline">
-      <article class="profile_options column ">
-        <%= link_to 'Favotires',  saved_articles_index_path(id: @user.id) %>
-        <%= link_to 'New Article', new_article_path%>
-        <%= link_to 'Logout', delete_session_path %>
+      <article class="profile_options column is-2">
+        <p><%= link_to 'Favotires',  saved_articles_index_path(id: @user.id) %> <%= fa_icon "heart" %></p>
+        <p><%= link_to 'New Article', new_article_path%> <%= fa_icon "edit" %></p>
+        <p><%= link_to 'Logout', delete_session_path %> <%= fa_icon "arrow-circle-right"%></p>
       </article>
-      <article class="profile_most_recent_article column is-half">
+      <article class="profile_most_recent_article column is-7">
         <a href="<%= article_path(:id => @article.first.id) %>">
           <img src="<%= @article.first.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
           <div class="profile_most_recent_article_info">
@@ -26,17 +26,18 @@
           <a href="<%= article_path(:id => article.id)%>">
             <img src="<%= article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
             <div class="profile_article_info">
-              <p>
+              <p class="profile_article_info_categories">
                 <%  article.categories.each do |category| %>
                   • <%= category_name(category) %>
                 <% end %>
               </p>
-              <div class="profile_article_title">
-                <h3><%= article.title%></h3>
-                <p><%= article.votes.length %> <%= user_index_votes(article) %></p>
-              </div>
+              <p><%= article.text %></p>
             </div>
           </a>
+          <div class="profile_article_title">
+            <h3><%= article.title%></h3>
+            <p><%= article.votes.length %> <%= user_index_votes(article) %></p>
+          </div>
         </article>
       <% end %>
     </section>

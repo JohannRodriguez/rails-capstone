@@ -2,11 +2,11 @@ module ArticlesHelper
   def vote
     @vote = Vote.where(user_id: session[:current_user_id], article_id: @article.id)
     if session[:current_user_id].nil?
-      link_to 'Vote', new_session_path
+      link_to (fa_icon "star"), new_session_path, class: 'vote_highlight'
     elsif !@vote.empty?
-      link_to 'Unvote', delete_vote_path(id: @vote.first.id, article_id: @article.id), method: :delete
+      link_to (fa_icon "star"), delete_vote_path(id: @vote.first.id, article_id: @article.id), method: :delete, class: 'vote_shadow'
     else
-      link_to 'Vote', votes_path(article_id: @article.id), method: :post
+      link_to (fa_icon "star"), votes_path(article_id: @article.id), method: :post, class: 'vote_highlight'
     end
   end
 
@@ -39,10 +39,12 @@ module ArticlesHelper
   end
 
   def save_article_show
-    if session[:current_user_id].nil?
-      link_to 'Save Article', new_session_path
+    return link_to (fa_icon "heart"), new_session_path, class: 'favorite_highlight' if session[:current_user_id].nil?
+    @favorite = @user.saved_articles.where(article_id: @article.id)
+    if !@favorite.empty?
+      link_to (fa_icon "heart"), save_article_path(id: @favorite.first.id, article_id: @article.id), method: :delete, class: 'favorite_shadow'
     else
-      link_to 'Save Article', save_articles_path(article_id: @article.id), method: :post
+      link_to (fa_icon "heart"), save_articles_path(article_id: @article.id), method: :post, class: 'favorite_highlight'
     end
   end
 end

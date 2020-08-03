@@ -18,8 +18,13 @@ class SaveArticlesController < ApplicationController
   def destroy
     @saved_article = SaveArticle.find_by_id(params[:id])
     if @saved_article.destroy
-      redirect_to category_path(id: params[:category]) unless params[:category].nil?
-      redirect_to saved_articles_index_path(id: session[:current_user_id]) if params[:category].nil?
+      if !params[:category].nil?
+        redirect_to category_path(id: params[:category])
+      elsif !params[:article_id].nil?
+        redirect_to article_path(params[:article_id])
+      else
+      redirect_to saved_articles_index_path(id: session[:current_user_id])
+      end
       flash.alert = "Your saved article was deleted"
     else
       flash.alert = "You still have the article D:"

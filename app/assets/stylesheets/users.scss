@@ -47,7 +47,7 @@
 }
 
 .profile_article {
-  height: 300px;
+  height: 280px;
 }
 
 .profile_most_recent_article_text {
@@ -57,11 +57,17 @@
   overflow: auto;
 }
 
-.profile_article_title {
+.profile_article,
+.profile_second_article {
+  position: relative;
+}
+
+.profile_article .profile_article_title {
+  position: absolute;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  overflow: hidden;
+  margin: 0 20px;
+  bottom: -10px;
 }
 
 .profile_article_title h3 {
@@ -74,18 +80,36 @@
   font-weight: bold;
 }
 
+.profile_most_recent_article .profile_article_title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 25px;
+}
+
+.profile_second_article .profile_article_info {
+  overflow: hidden;
+  height: 105px;
+  padding: 0 20px;
+}
+
+.profile_second_article .profile_article_title {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
 .profile_second_article img {
   width: 100%;
   height: 60%;
 }
 
-.profile_article_info {
+.profile_article .profile_article_info {
   padding: 20px;
+  padding-bottom: 0;
   position: relative;
-}
-
-.profile_article_info > p {
-  height: 68px;
+  height: 300px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -93,27 +117,48 @@
   width: 60%;
   height: 220px;
   float: left;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .profile_article a {
   background-color: red;
 }
 
-.profile_article .profile_article_info {
-  height: 300px;
-  display: relative;
-  padding-bottom: 80px;
+.profile_article .profile_article_info > p {
+  margin-right: 0 !important;
 }
 
-.profile_article .profile_article_info > p {
-  padding-left: 20px !important;
-  margin-right: 0 !important;
-  height: 100%;
+.profile_article_info_categories {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .profile_article .profile_article_title {
   position: absolute;
   width: calc(100% - 40px);
   bottom: 20px;
+}
+
+.profile_article_text {
+  background-color: blue;
+  width: 300px;
+  height: auto;
+}
+
+.profile_options {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.profile_options p {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 90px;
+}
+
+.profile_options a {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 30px;
 }

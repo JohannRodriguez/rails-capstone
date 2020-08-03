@@ -4,16 +4,16 @@
     <div class="columns is-gapless">
       <% @user.saved_articles.order(:created_at).reverse_order.each do |article_record| %>
         <article class="favorite_article column is-one-quarter">
-          <a href="<%= favorite_link(article_record) %>"><img src="<%= saved_article_image(article_record) %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'"></a>
-          <div class="favorites_article_info">
-            <div class="favorites_article_author_info">
-              <h2 class="favorite_article_title"><%= saved_article_title(article_record) %></h2>
-              <% unless article_record.article_id.nil?%>
-              <p class="favorite_author"><%= find_article(article_record).author.name %></p>
-              <% end %>
-            </div>
-            <p><%= link_to (fa_icon "heart"), save_article_path(id: article_record.id), method: :delete, class: 'favorite_shadow favorite_saved_articles' %></p>
+          <p class="favorites_heart"><%= link_to (fa_icon "heart"), save_article_path(id: article_record.id), method: :delete, class: 'favorite_shadow favorite_saved_articles' %></p>
+          <a class="favorites_image_parent" href="<%= favorite_link(article_record) %>">
+            <img src="<%= saved_article_image(article_record) %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
             <p class="favorite_saved_at">Saved at: <%= article_record.created_at.strftime("%Y-%m-%d") %></p>
+          </a>
+          <div class="favorites_article_author_info">
+            <h2 class="favorite_article_title"><%= saved_article_title(article_record) %></h2>
+            <% unless article_record.article_id.nil?%>
+            <p class="favorite_author"><%= find_article(article_record).author.name %></p>
+            <% end %>
           </div>
         </article>
     <% end %>

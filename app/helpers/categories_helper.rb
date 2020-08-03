@@ -1,14 +1,26 @@
 module CategoriesHelper
-  def latest_category_article(category)
+  def latest_category_article_title(category)
     if !category.articles.length.positive?
-      "No articles found for this category"
+      'No articles found for this category'
     else
-      category.articles.order("created_at").last.title
+      category.articles.order('created_at').last.title
     end
   end
 
   def latest_category_article_image(category)
-     return category.articles.order("created_at").last.image if category.articles.length.positive?
+    if !category.articles.length.positive?
+      'https://i.ibb.co/YhBBFvR/anf2.jpg'
+    else
+     return category.articles.order('created_at').last.image
+   end
+  end
+
+  def latest_category_article_name(category)
+    if !category.articles.length.positive?
+      ''
+    else
+      category.articles.order('created_at').last.author.name
+    end
   end
 
   def category_article_vote(article)
