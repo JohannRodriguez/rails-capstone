@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="flash_message">
+        <%= msg %>
+      </div>
+    <% end %>
     <div class="category_show_section columns is-multiline is-gapless">
       <% @categories.each do |category| %>
         <article class="category_show column is-half">

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <% flash.each do |type, msg| %>
+    <div class="flash_message">
+      <%= msg %>
+    </div>
     <section class="user_profile columns is-multiline">
       <article class="profile_options column is-2">
         <p><%= link_to 'Favotires',  saved_articles_index_path(id: @user.id) %> <%= fa_icon "heart" %></p>

@@ -26,6 +26,18 @@
   background-color: #4e443f;
  }
 
+ .flash_message {
+   position: absolute;
+   top: 100px;
+   z-index: 20;
+   background-color: white;
+   font-weight: bold;
+   border-radius: 5px;
+   border: 2px solid #fa5f00;
+   padding: 15px;
+   color: #4e443f;
+ }
+
  nav {
    position: absolute;
    background-color: white;

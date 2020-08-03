@@ -11,10 +11,10 @@ class ArticlesController < ApplicationController
   def create
     @user = User.find_by_id(session[:current_user_id])
     if @user.articles.build(article_params).save
-      flash.alert = 'Article created'
+      flash.alert = 'Article succesfully created'
       redirect_to user_path(session[:current_user_id])
     else
-      flash.alert = 'Invalid fields'
+      flash.alert = 'Invalid field(s)'
       redirect_to new_article_path
     end
   end
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find_by_id(params[:id])
     if @article.update(article_params)
-      flash.alert = 'Article updated'
+      flash.alert = 'Article succesfully updated'
       redirect_to article_path(id: params[:id])
     else
       flash.alert = 'Somehting went wrong trying to edit your article'

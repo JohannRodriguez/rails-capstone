@@ -9,9 +9,9 @@ class SaveArticlesController < ApplicationController
     if @user.saved_articles.new(article_id: params[:article_id]).save
       redirect_to category_path(id: params[:category]) unless params[:category].nil?
       redirect_to article_path(params[:article_id]) if params[:category].nil?
-      flash.alert = 'Article succesfully saved'
+      flash.alert = 'Article added to your favorites'
     else
-      flash.alert = "Article wasn't saved"
+      flash.alert = "Something went wrong adding to favorites"
     end
   end
 
@@ -25,9 +25,9 @@ class SaveArticlesController < ApplicationController
       else
       redirect_to saved_articles_index_path(id: session[:current_user_id])
       end
-      flash.alert = "Your saved article was deleted"
+      flash.alert = "Article removed from favorites"
     else
-      flash.alert = "You still have the article D:"
+      flash.alert = "Something went wrong removing from favorites"
     end
   end
 end

@@ -2,9 +2,9 @@
 <html>
   <body>
     <% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
-    </div>
+      <div class="flash_message">
+        <%= msg %>
+      </div>
     <% end %>
     <article class="article_show">
       <div class="article_show_image_section">

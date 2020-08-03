@@ -6,9 +6,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.find_by_id(params[:category_id])
     if @category.relate_categories.where(article_id: params[:article_id]).empty?
+      flash.alert = 'Category succesfully added to your article'
       redirect_to article_path(id: params[:article_id]) if @category.relate_categories.new(article_id: params[:article_id]).save
     else
-      flash.alert = 'Category alreday exist for this article'
+      flash.alert = 'Category already exist for this article'
       redirect_to article_path(id: params[:article_id])
     end
   end
@@ -21,6 +22,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find_by_id(params[:id])
     if @category.relate_categories.where(article_id: params[:article_id]).destroy_all
+      flash.alert = 'Category succesfully removed from your article'
       redirect_to article_path(id: params[:article_id])
     end
   end

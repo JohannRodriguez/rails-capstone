@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="flash_message">
+        <%= msg %>
+      </div>
+    <% end %>
     <div class="columns is-gapless">
       <% @user.saved_articles.order(:created_at).reverse_order.each do |article_record| %>
         <article class="favorite_article column is-one-quarter">

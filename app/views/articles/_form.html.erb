@@ -2,9 +2,9 @@
 <html>
   <body>
     <% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
-    </div>
+      <div class="flash_message">
+        <%= msg %>
+      </div>
     <% end %>
     <%= form_for @article do |f| %>
     Title: <%= f.text_field :title %>
