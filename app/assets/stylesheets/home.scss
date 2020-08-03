@@ -27,7 +27,6 @@
 .top_articles {
   height: 500px;
   margin-bottom: 0 !important;
-  margin-top: 48px !important;
 }
 
 .categories_articles a {
@@ -121,11 +120,11 @@ p {
 .categories_articles a:hover {
   position: absolute;
   color: #fa5f00;
-  width: 108%;
-  height: 108%;
+  width: 102%;
+  height: 105%;
   z-index: 2;
-  top: -4%;
-  left: -4%;
+  top: -2.5%;
+  left: -1%;
   transition: 0.2s;
 }
 
@@ -153,20 +152,20 @@ p {
 
 .most_voted_article a:hover {
   position: absolute;
-  width: 102%;
+  width: 101%;
   height: 102%;
   z-index: 5;
   top: -1%;
-  left: -1%;
+  left: -0.5%;
 }
 
 .week_category a:hover {
   position: absolute;
-  width: 104%;
-  height: 525px;
+  width: 102%;
+  height: 510px;
   z-index: 5;
-  top: -2%;
-  left: -2%;
+  top: -1%;
+  left: -1%;
 }
 
 .week_category a:hover > p {

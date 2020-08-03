@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.category_section {
-  margin-top: 48px !important;
-}
-
 .category_article_info {
   background-color: white;
   height: 100%;
@@ -29,6 +25,14 @@
 .category_article_info h2 {
   margin-left: 15px;
   margin-bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 40px);
+}
+
+.category_article_info {
+  width: 50%;
 }
 
 .category_article_show h2 a{
@@ -44,6 +48,11 @@
 
 .category_truncate_text a{
   color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
 }
 
 .category_vote_section {
@@ -129,8 +138,12 @@
 }
 
 .category_show_titles h2 {
-  color: #fa5f00;
+  color: #f99c00;
   font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .category_show_titles {
@@ -139,8 +152,8 @@
 
 .category_show_section {
   margin: auto !important;
-  margin-top: 53px !important;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .category_show {
@@ -172,5 +185,5 @@
 }
 
 .category_show:hover h2 {
-  color: #f99c00;
+  color: #fa5f00;
 }

@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <body>
     <% flash.each do |type, msg| %>
       <div class="flash_message">
         <%= msg %>
       </div>
     <% end %>
-    <article class="article_show">
+    <article class="article_show bottom_page_margin">
       <div class="article_show_image_section">
-        <img src="<%= @article.image %>" width="150px" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+        <img src="<%= @article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
         <div class="article_show_name_votes">
           <p><%= @user.name %></p>
           <p><%= @article.votes.count %> <%= multiple_votes? %></p>
@@ -42,5 +39,3 @@
           </div>
         <% end %>
     </article>
-  </body>
-</html>

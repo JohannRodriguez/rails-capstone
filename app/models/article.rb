@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  validates :title, presence: true, uniqueness: true, length: { minimum: 5, maximum: 25 }
-  validates :text, presence: true, length: { maximum: 2000 }
+  validates :title, presence: true, uniqueness: true, length: { minimum: 5, maximum: 55 }
+  validates :text, presence: true, length: { maximum: 4000 }
   validates_presence_of :image
 
   belongs_to :author, class_name: 'User'
