@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
     @user = User.find_by_id(session[:current_user_id])
     if @user.articles.build(article_params).save
       flash.alert = 'Article succesfully created'
-      redirect_to user_path(session[:current_user_id])
+      redirect_to article_path(@user.articles.order(:created_at).reverse_order.first)
     else
       flash.alert = 'Invalid field(s)'
       redirect_to new_article_path

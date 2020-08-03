@@ -2,14 +2,15 @@
 <html lang="en" dir="ltr">
   <body>
     <% flash.each do |type, msg| %>
-    <div class="flash_message">
-      <%= msg %>
-    </div>
+      <div class="flash_message">
+        <%= msg %>
+      </div>
     <% end %>
-    <div class="login_form">
+    <div class="login_form new_user">
       <%= form_for :session, url: sessions_path() do |f| %>
-      User name: <%= f.text_field :name, placeholder: 'Username' %>
-      <%= f.submit "Login" %>
+        <p>User name:</p>
+        <%= f.text_field :name, placeholder: 'Username' %><br>
+        <%= f.submit 'LOGIN', class: 'submit_btn' %>
       <% end %>
     </div>
   </body>

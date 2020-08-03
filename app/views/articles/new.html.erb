@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="flash_message">
+        <%= msg %>
+      </div>
+    <% end %>
     <div class="article_form">
       <%= render partial: 'form' %>
     </div>

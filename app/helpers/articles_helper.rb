@@ -47,4 +47,12 @@ module ArticlesHelper
       link_to (fa_icon "heart"), save_articles_path(article_id: @article.id), method: :post, class: 'favorite_highlight'
     end
   end
+
+  def button_message
+    if current_page?(:controller => 'articles', :action => 'new')
+      'CREATE ARTICLE'
+    elsif current_page?(:controller => 'articles', :action => 'edit')
+      'EDIT ARTICLE'
+    end
+  end
 end

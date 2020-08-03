@@ -5,6 +5,7 @@
     <div class="flash_message">
       <%= msg %>
     </div>
+    <% end %>
     <section class="user_profile columns is-multiline">
       <article class="profile_options column is-2">
         <p><%= link_to 'Favotires',  saved_articles_index_path(id: @user.id) %> <%= fa_icon "heart" %></p>
@@ -27,7 +28,7 @@
       </article>
       <% @article.drop(1).each_with_index do |article, index| %>
         <article class="<%= profile_article_place(index) %> column is-one-quarter">
-          <a href="<%= article_path(:id => article.id)%>">
+          <a href="<%= article_path(:id => article.id) %>">
             <img src="<%= article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
             <div class="profile_article_info">
               <p class="profile_article_info_categories">

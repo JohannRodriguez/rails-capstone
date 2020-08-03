@@ -30,6 +30,7 @@
 .profile_most_recent_article_info {
   padding: 0 20px;
   position: relative;
+  width: 100%;
 }
 
 
@@ -52,6 +53,7 @@
 
 .profile_most_recent_article_text {
   margin-top: 15px;
+  width: 100% !important;
   padding-right: 10px;
   height: 320px;
   overflow: auto;
@@ -82,9 +84,10 @@
 
 .profile_most_recent_article .profile_article_title {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
   padding: 0 20px;
   margin-top: 25px;
+  width: 100% !important;
 }
 
 .profile_second_article .profile_article_info {
@@ -118,10 +121,6 @@
   height: 220px;
   float: left;
   margin-bottom: 60px;
-}
-
-.profile_article a {
-  background-color: red;
 }
 
 .profile_article .profile_article_info > p {
@@ -161,4 +160,25 @@
   color: #fa5f00;
   font-weight: bold;
   font-size: 30px;
+}
+
+.new_user {
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 80px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.new_user p {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.new_user .submit_btn {
+  margin-bottom: 10px;
 }
