@@ -11,7 +11,7 @@ class SaveArticlesController < ApplicationController
       redirect_to article_path(params[:article_id]) if params[:category].nil?
       flash.alert = 'Article added to your favorites'
     else
-      flash.alert = "Something went wrong adding to favorites"
+      flash.alert = 'Something went wrong adding to favorites'
     end
   end
 
@@ -23,11 +23,11 @@ class SaveArticlesController < ApplicationController
       elsif !params[:article_id].nil?
         redirect_to article_path(params[:article_id])
       else
-      redirect_to saved_articles_index_path(id: session[:current_user_id])
+        redirect_to saved_articles_index_path(id: session[:current_user_id])
       end
-      flash.alert = "Article removed from favorites"
+      flash.alert = 'Article removed from favorites'
     else
-      flash.alert = "Something went wrong removing from favorites"
+      flash.alert = 'Something went wrong removing from favorites'
     end
   end
 end

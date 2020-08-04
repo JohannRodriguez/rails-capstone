@@ -6,7 +6,7 @@ module UsersHelper
   end
 
   def profile_article_place(index)
-    if index == 0
+    if index.zero?
       'profile_second_article'
     else
       'profile_article'

@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
       flash.alert = 'Article succesfully updated'
       redirect_to article_path(id: params[:id])
     else
-      flash.alert = 'Somehting went wrong trying to edit your article'
+      flash.alert = 'Invalid fields'
       render :edit
     end
   end
@@ -46,6 +46,7 @@ class ArticlesController < ApplicationController
     @article.saved_articles.delete_all
     Vote.where(article_id: @article.id).destroy_all
     @article.destroy
+    flash.alert = 'Article deleted'
     redirect_to user_path(session[:current_user_id])
   end
 

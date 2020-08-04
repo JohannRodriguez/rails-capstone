@@ -27,8 +27,8 @@
         </p>
         <% if session[:current_user_id] == @article.author.id %>
           <div class="modify_article">
-            <p><%= edit_article %></p>
-            <p><%= delete_article %></p>
+            <p><%= link_to 'Edit article', edit_article_path(id: @article.id) %></p>
+            <p><%= link_to 'Delete article', delete_article_path(id: @article.id), method: :delete %></p>
           </div>
             <p>Add a category:</p>
             <p class="add_category">

@@ -1,15 +1,16 @@
 module HomeHelper
+  # rubocop:disable Layout/LineLength
   def index_latest_category_article(category)
     if !category.articles.length.positive?
-      "No articles found for this category"
+      'No articles found for this category'
     else
-      category.articles.order("created_at").last.title
+      category.articles.order('created_at').last.title
     end
   end
 
   def index_latest_category_article_image(category)
     if category.priority <= 2 and category.articles.length.positive?
-      category.articles.order("created_at").last.image
+      category.articles.order('created_at').last.image
     else
       'https://i.ibb.co/YhBBFvR/anf2.jpg'
     end
@@ -30,7 +31,6 @@ module HomeHelper
       feautured_article.image
     end
   end
-
 
   def feautured_category_path
     if !feautured_article.nil?
@@ -67,12 +67,11 @@ module HomeHelper
   end
 
   def most_voted_article_path
-    if Vote.all.empty?
-      articles_path
-    else
-      article_path(id: most_voted_article.id)
-    end
+    return articles_path if Vote.all.empty?
+
+    article_path(id: most_voted_article.id)
   end
+  # rubocop:disable Style/GuardClause
 
   private
 
@@ -90,8 +89,8 @@ module HomeHelper
 
   def feautured_article
     @week_category = feautured_category
-    unless @week_category.nil?
-      @week_article = @week_category.articles.where('articles.created_at >= ?', 7.days.ago).reverse_order.first
-    end
+    @week_article = @week_category.articles.where('articles.created_at >= ?', 7.days.ago).reverse_order.first unless @week_category.nil?
   end
+  # rubocop:enable Style/GuardClause
+  # rubocop:enable Layout/LineLength
 end
