@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  # rubocop:disable Layout/LineLength
+  # rubocop:disable Style/GuardClause
   def index
     @categories = Category.all.order('priority')
   end
@@ -24,9 +24,11 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find_by_id(params[:id])
-    return flash.alert = 'Category succesfully removed from your article' if @category.relate_categories.where(article_id: params[:article_id]).destroy_all
+    if @category.relate_categories.where(article_id: params[:article_id]).destroy_all
+      flash.alert = 'Category succesfully removed from your article'
 
-    redirect_to article_path(id: params[:article_id])
+      redirect_to article_path(id: params[:article_id])
+    end
   end
-  # rubocop:enable Layout/LineLength
+  # rubocop:enable Style/GuardClause
 end
