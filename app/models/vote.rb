@@ -11,6 +11,4 @@ class Vote < ApplicationRecord
   def self.find_most_voted
     group(:article_id).order(count_all: :desc).count.first
   end
-
-
 end

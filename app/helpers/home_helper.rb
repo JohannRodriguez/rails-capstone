@@ -1,5 +1,4 @@
 module HomeHelper
-  # rubocop:disable Layout/LineLength
   def index_latest_category_article(category)
     if !category.articles.length.positive?
       'No articles found for this category'
@@ -92,5 +91,4 @@ module HomeHelper
     @week_article = @week_category.articles.find_weeks_article unless @week_category.nil?
   end
   # rubocop:enable Style/GuardClause
-  # rubocop:enable Layout/LineLength
 end

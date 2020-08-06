@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  # rubocop:disable Style/HashSyntax
   validates :title, presence: true, uniqueness: true, length: { minimum: 5, maximum: 55 }
   validates :text, presence: true, length: { maximum: 4000 }
   validates_presence_of :image
@@ -19,6 +20,5 @@ class Article < ApplicationRecord
   def self.find_weeks_article
     where('articles.created_at >= ?', 7.days.ago).reverse_order.first
   end
-
-
+  # rubocop:enable Style/HashSyntax
 end

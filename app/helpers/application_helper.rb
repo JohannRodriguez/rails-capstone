@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # rubocop:disable Style/GuardClause
   def generate_link(name, link_path)
     if current_page?(link_path)
       link_to name, link_path, class: 'nav_btn_highlight'
@@ -13,7 +14,7 @@ module ApplicationHelper
         concat(generate_link('PROFILE', user_path(id: session[:current_user_id])))
         concat(generate_link('FAVORITES', saved_articles_index_path(id: session[:current_user_id])))
         concat(generate_link('NEW ARTICLE', new_article_path))
-        concat(link_to 'LOGOUT', delete_session_path, method: :delete)
+        concat((link_to 'LOGOUT', delete_session_path, method: :delete))
       end
     end
   end
@@ -27,4 +28,5 @@ module ApplicationHelper
       end
     end
   end
+  # rubocop:enable Style/GuardClause
 end

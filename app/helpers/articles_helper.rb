@@ -1,5 +1,6 @@
 module ArticlesHelper
   # rubocop:disable  Layout/LineLength
+  # rubocop:disable  Style/GuardClause
   def vote
     @vote = Vote.where(user_id: session[:current_user_id], article_id: @article.id)
     if session[:current_user_id].nil?
@@ -64,5 +65,6 @@ module ArticlesHelper
 
     link_to category.name, delete_category_path(id: category.id, article_id: @article.id), method: :delete
   end
+  # rubocop:enable  Style/GuardClause
   # rubocop:enable  Layout/LineLength
 end
