@@ -48,6 +48,7 @@ To get a local copy up and running follow these simple example steps.
 - Once inside, run the following comands:
 ```
 $ bundle install
+$ rails db:create
 $ rails db:migrate
 ```
 

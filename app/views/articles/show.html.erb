@@ -25,17 +25,8 @@
             • <%= link_to category.name, category_path(id: category.id) %>
           <% end %>
         </p>
-        <% if session[:current_user_id] == @article.author.id %>
-          <div class="modify_article">
-            <p><%= link_to 'Edit article', edit_article_path(id: @article.id) %></p>
-            <p><%= link_to 'Delete article', delete_article_path(id: @article.id), method: :delete %></p>
-          </div>
-            <p>Add a category:</p>
-            <p class="add_category">
-              <% @category.each do |c| %>
-              | <%= add_category(c) %>
-              <% end %>
-            </p>
-          </div>
-        <% end %>
+        <%= author_edits %>
+        <p>Add a category:</p>
+        <%= article_add_categories_html %>
+      </div>
     </article>
