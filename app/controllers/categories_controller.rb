@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   # rubocop:disable Style/GuardClause
   def index
-    @categories = Category.all.order('priority')
+    @categories = Category.all.category_prior
   end
 
   def create

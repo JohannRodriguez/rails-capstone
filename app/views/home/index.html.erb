@@ -24,7 +24,7 @@
         </article>
       </div>
     <div class="columns is-gapless is-multiline categories_articles">
-      <% @categories.order(:priority).each do |category| %>
+      <% @categories.category_prior.each do |category| %>
         <% if category.priority <= 2 %>
           <article class="article_showcase column is-one-quarter">
             <a href="<%= category_path(id: category.id)%>">

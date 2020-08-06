@@ -5,29 +5,13 @@
     </div>
     <% end %>
     <section class="user_profile columns is-multiline">
-      <article class="profile_options column is-2">
+      <article class="profile_options column is-one-quarter">
         <p><%= link_to 'Favotires',  saved_articles_index_path(id: @user.id) %> <%= fa_icon "heart" %></p>
         <p><%= link_to 'New Article', new_article_path%> <%= fa_icon "edit" %></p>
         <p><%= link_to 'Logout', delete_session_path %> <%= fa_icon "arrow-circle-right"%></p>
       </article>
-      <% unless @article.all.empty? %>
-        <article class="profile_most_recent_article column is-7">
-            <a href="<%= article_path(:id => @article.first.id) %>">
-              <img src="<%= @article.first.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
-              <div class="profile_most_recent_article_info">
-                <div class="profile_most_recent_article_text">
-                  <p><%= @article.first.text %></p>
-                </div>
-                <div class="profile_article_title">
-                  <h3><%= @article.first.title %></h3>
-                  <p><%= @article.first.votes.length %> <%= user_index_votes(@article.first) %></p>
-                </div>
-              </div>
-            </a>
-        </article>
-      <% end %>
-      <% @article.drop(1).each_with_index do |article, index| %>
-        <article class="<%= profile_article_place(index) %> column is-one-quarter">
+      <% @article.each do |article| %>
+        <article class="profile_article column is-one-quarter">
           <a href="<%= article_path(:id => article.id) %>">
             <img src="<%= article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
             <div class="profile_article_info">

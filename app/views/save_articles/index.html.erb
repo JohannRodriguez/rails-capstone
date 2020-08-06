@@ -4,7 +4,7 @@
       </div>
     <% end %>
     <div class="columns is-gapless">
-      <% @user.saved_articles.order(:created_at).reverse_order.each do |article_record| %>
+      <% @user.saved_articles.favorite_created_at_sort.each do |article_record| %>
         <article class="favorite_article column is-one-quarter">
           <p class="favorites_heart"><%= link_to (fa_icon "heart"), save_article_path(id: article_record.id), method: :delete, class: 'favorite_shadow favorite_saved_articles' %></p>
           <a class="favorites_image_parent" href="<%= favorite_link(article_record) %>">

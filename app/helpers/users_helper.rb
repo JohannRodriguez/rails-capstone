@@ -5,14 +5,6 @@ module UsersHelper
     'votes'
   end
 
-  def profile_article_place(index)
-    if index.zero?
-      'profile_second_article'
-    else
-      'profile_article'
-    end
-  end
-
   def category_name(category)
     category.name
   end

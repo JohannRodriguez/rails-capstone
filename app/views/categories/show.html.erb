@@ -4,7 +4,7 @@
       </div>
     <% end %>
     <section class="category_section is-gapless columns is-multiline">
-      <% @category.articles.order("created_at").reverse_order.each do |article| %>
+      <% @category.articles.created_at_sort.each do |article| %>
       <article class="category_article_show is-gapless columns column is-half">
         <a class="column" href="<%= article_path(id: article.id) %>">
           <img src="<%= article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">

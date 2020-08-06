@@ -76,20 +76,20 @@ module HomeHelper
   private
 
   def most_voted_article
-    @most_votes = Vote.group(:article_id).order(count_all: :desc).count.first
+    @most_votes = Vote.find_most_voted
     Article.find_by_id(@most_votes[0])
   end
 
   def feautured_category
     unless RelateCategory.all.empty?
-      @week_category_record = RelateCategory.where('created_at >= ?', 7.days.ago).group(:category_id).order(count_all: :desc).count.first
+      @week_category_record = RelateCategory.find_weeks_category
       @week_category = Category.find_by_id(@week_category_record[0])
     end
   end
 
   def feautured_article
     @week_category = feautured_category
-    @week_article = @week_category.articles.where('articles.created_at >= ?', 7.days.ago).reverse_order.first unless @week_category.nil?
+    @week_article = @week_category.articles.find_weeks_article unless @week_category.nil?
   end
   # rubocop:enable Style/GuardClause
   # rubocop:enable Layout/LineLength

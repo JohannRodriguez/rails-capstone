@@ -4,7 +4,7 @@
       </div>
     <% end %>
     <div class="category_show_section columns is-multiline is-7">
-      <% @categories.each do |category| %>
+      <% @categories.category_prior.each do |category| %>
         <article class="category_show column is-one-third">
           <a href="<%= category_path(id: category.id) %>">
             <div class="category_show_titles">

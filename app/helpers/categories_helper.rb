@@ -21,7 +21,7 @@ module CategoriesHelper
   end
 
   def category_article_vote(article)
-    @vote = Vote.where(user_id: session[:current_user_id], article_id: article.id)
+    @vote = Vote.find_vote(session[:current_user_id], article)
     if session[:current_user_id].nil?
       link_to (fa_icon 'star'), new_session_path, class: 'vote_highlight'
     elsif !@vote.empty?

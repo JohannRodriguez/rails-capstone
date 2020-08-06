@@ -4,7 +4,7 @@
       </div>
     <% end %>
     <section class="articles_index_section columns is-multiline">
-      <% @article.order('created_at').reverse_order.each do |article| %>
+      <% @article.created_at_sort.each do |article| %>
         <article class="articles_index_article column is-one-fifth">
           <div class="articles_index_article_title">
             <h3><%= article.title %></h3>

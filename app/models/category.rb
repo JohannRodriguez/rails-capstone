@@ -3,4 +3,9 @@ class Category < ApplicationRecord
 
   has_many :relate_categories, class_name: 'RelateCategory'
   has_many :articles, through: :relate_categories
+
+  scope :category_prior, -> { order(:priority) }
+  def self.category_prior
+    order(:priority)
+  end
 end

@@ -16,46 +16,22 @@
   color: black;
 }
 
-.profile_second_article,
-.profile_options,
-.profile_most_recent_article {
-  height: 400px;
-}
-
-.profile_most_recent_article a{
-  display: flex;
-}
-
 .profile_most_recent_article_info {
   padding: 0 20px;
   position: relative;
   width: 100%;
 }
 
-
-.profile_most_recent_article img {
-  width: 60%;
-  height: 400px;
-}
-
 .profile_article,
-.profile_second_article,
-.profile_options,
-.profile_most_recent_article {
+.profile_options {
   background-color: white;
   padding: 0;
 }
 
+
+.profile_options,
 .profile_article {
   height: 280px;
-}
-
-.profile_most_recent_article_text {
-  margin-top: 15px;
-  width: 100% !important;
-  padding-right: 10px;
-  height: 320px;
-  overflow: auto;
 }
 
 .profile_article,
@@ -157,7 +133,7 @@
 
 .profile_options {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 5px;
 }
 
 .profile_options p {
