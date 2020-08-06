@@ -1,8 +1,4 @@
-    <% flash.each do |type, msg| %>
-      <div class="flash_message">
-        <%= msg %>
-      </div>
-    <% end %>
+    <%= render partial: 'layouts/flash' %>
     <div class="columns is-gapless">
       <% @user.saved_articles.favorite_created_at_sort.each do |article_record| %>
         <article class="favorite_article column is-one-quarter">

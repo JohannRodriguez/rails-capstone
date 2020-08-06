@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   validates_presence_of :image
 
   belongs_to :author, class_name: 'User'
-  has_many :votes
+  has_many :votes, :dependent => :destroy
   has_many :saved_articles, class_name: 'SaveArticle'
 
   has_many :relate_categories, class_name: 'RelateCategory'

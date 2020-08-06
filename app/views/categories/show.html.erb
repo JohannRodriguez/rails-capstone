@@ -1,8 +1,4 @@
-    <% flash.each do |type, msg| %>
-      <div class="flash_message">
-        <%= msg %>
-      </div>
-    <% end %>
+    <%= render partial: 'layouts/flash' %>
     <section class="category_section is-gapless columns is-multiline">
       <% @category.articles.created_at_sort.each do |article| %>
       <article class="category_article_show is-gapless columns column is-half">

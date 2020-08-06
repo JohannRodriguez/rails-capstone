@@ -1,8 +1,4 @@
-    <% flash.each do |type, msg| %>
-    <div class="flash_message">
-      <%= msg %>
-    </div>
-    <% end %>
+    <%= render partial: 'layouts/flash' %>
     <div class="new_user" style="margin-top: 0px;">
       <%= form_for @user do |f| %>
         <p>User name:</p>

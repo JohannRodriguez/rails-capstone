@@ -15,6 +15,5 @@ Rails.application.routes.draw do
   post 'categories/create', to: 'categories#create'
   delete 'votes/:id', to: 'votes#destroy', as: 'delete_vote'
   get 'save_articles/:id', to: 'save_articles#index', as: 'saved_articles_index'
-  # match 'votes/create', to: 'votes#create', as: 'votes', via: [:get, :post]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
