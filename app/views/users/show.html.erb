@@ -1,5 +1,3 @@
-
-    <%= render partial: 'layouts/flash' %>
     <section class="user_profile columns is-multiline">
       <article class="profile_options column is-one-quarter">
         <p><%= link_to 'Favorites',  saved_articles_index_path(id: @user.id) %> <%= fa_icon "heart" %></p>
