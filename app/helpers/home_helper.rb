@@ -1,12 +1,4 @@
 module HomeHelper
-  def index_latest_category_article(category)
-    if !category.articles.length.positive?
-      'No articles found for this category'
-    else
-      category.articles.order('created_at').last.title
-    end
-  end
-
   def index_latest_category_article_image(category)
     if category.priority <= 2 and category.articles.length.positive?
       category.articles.order('created_at').last.image
@@ -70,9 +62,29 @@ module HomeHelper
 
     article_path(id: most_voted_article.id)
   end
+
+  def prior_categories(category)
+    if category.priority <= 2
+      tag.article class: 'article_showcase column is-one-quarter' do
+        tag.a href: category_path(id: category.id) do
+        concat(content_tag(:h2, category.name, class: 'category_name'))
+        concat(content_tag(:p, (index_latest_category_article(category)), class: 'category_article_title'))
+        concat(image_tag(index_latest_category_article_image(category), onerror: "this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'"))
+        end
+      end
+    end
+  end
   # rubocop:disable Style/GuardClause
 
   private
+
+  def index_latest_category_article(category)
+    if !category.articles.length.positive?
+      'No articles found for this category'
+    else
+      category.articles.order('created_at').last.title
+    end
+  end
 
   def most_voted_article
     @most_votes = Vote.find_most_voted

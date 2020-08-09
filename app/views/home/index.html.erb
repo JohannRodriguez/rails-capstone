@@ -20,14 +20,6 @@
       </div>
     <div class="columns is-gapless is-multiline categories_articles">
       <% @categories.category_prior.each do |category| %>
-        <% if category.priority <= 2 %>
-          <article class="article_showcase column is-one-quarter">
-            <a href="<%= category_path(id: category.id)%>">
-              <h2 class="category_name"><%= category.name %></h2>
-              <p class="category_article_title"><%= index_latest_category_article(category) %></p>
-              <img src="<%= index_latest_category_article_image(category) %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
-            </a>
-          </article>
-        <% end %>
+        <%= prior_categories(category) %>
       <% end %>
     </div>
