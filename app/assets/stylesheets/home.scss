@@ -25,7 +25,7 @@
 }
 
 .top_articles {
-  height: 500px;
+  height: 380px;
   margin-bottom: 0 !important;
 }
 
@@ -60,11 +60,11 @@
 
 .top_articles img {
   width: 100%;
-  height: 500px;
+  height: 380px;
 }
 
 .top_articles .article_showcase img {
-  height: 100%;
+  height: 380px;
 }
 
 .categories_articles img {
@@ -78,7 +78,6 @@
 
 .article_showcase img {
   width: 100%;
-  height: 100%;
 }
 
 h1 {
@@ -118,19 +117,13 @@ p {
 }
 
 .categories_articles a:hover {
-  position: absolute;
   color: #fa5f00;
-  width: 102%;
-  height: 105%;
-  z-index: 2;
-  top: -2.5%;
-  left: -1%;
   transition: 0.2s;
 }
 
 .week_category {
   position: relative;
-  height: 500px;
+  height: 380px;
 }
 
 .week_category p {
@@ -148,27 +141,4 @@ p {
 
 .most_voted_article img {
   height: 100%;
-}
-
-.most_voted_article a:hover {
-  position: absolute;
-  width: 101%;
-  height: 102%;
-  z-index: 5;
-  top: -1%;
-  left: -0.5%;
-}
-
-.week_category a:hover {
-  position: absolute;
-  width: 102%;
-  height: 510px;
-  z-index: 5;
-  top: -1%;
-  left: -1%;
-}
-
-.week_category a:hover > p {
-  color: #fa5f00;
-  transition: 0.2s;
 }

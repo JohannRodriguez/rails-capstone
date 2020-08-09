@@ -20,7 +20,7 @@
  }
 
  body {
-   padding: 60px 10px 60px 10px;
+   padding: 60px 10px 30px 10px;
    min-height: 100vh;
    position: relative;
    background-color: #4e443f;
@@ -105,9 +105,10 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   height: 60px;
+   height: 30px;
    position: absolute;
    bottom: 0;
+   font-size: 12px;
 }
 
 .rights {
@@ -131,10 +132,9 @@ footer h1 {
 }
 
 .contact a {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 5px;
   position: relative;
-  top: 5px;
 }
 
 .contact p {
