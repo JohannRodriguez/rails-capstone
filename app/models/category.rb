@@ -1,4 +1,4 @@
-class Category < ApplicationRecord
+class Category < ActiveRecord::Base
   validates_uniqueness_of :name
 
   has_many :relate_categories, class_name: 'RelateCategory'

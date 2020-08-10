@@ -12,7 +12,7 @@
 - User can create, edit and delete articles
 - User can mark an article as favorite an see them
 - User can vote an articles
-- Categories displayed din order of priority and with most recent article attached to it
+- Categories displayed in order of priority and with most recent article attached to it
 
 ## Built With
 
@@ -50,6 +50,7 @@ To get a local copy up and running follow these simple example steps.
 $ bundle install
 $ rails db:create
 $ rails db:migrate
+$ rails db:seed
 ```
 
 ### Usage
