@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:current_user_id] = @user.id
       flash.alert = 'User successfully created'
-      redirect_to new_session_path
+      redirect_to root_path
     else
       flash.alert = 'Invalid username'
       redirect_to new_user_path
