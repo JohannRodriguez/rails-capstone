@@ -62,19 +62,20 @@ module HomeHelper
 
     article_path(id: most_voted_article.id)
   end
+  # rubocop:disable Style/GuardClause
+  # rubocop:disable Layout/LineLength
 
   def prior_categories(category)
     if category.priority <= 2
       tag.article class: 'article_showcase column is-one-quarter' do
         tag.a href: category_path(id: category.id) do
-        concat(content_tag(:h2, category.name, class: 'category_name'))
-        concat(content_tag(:p, (index_latest_category_article(category)), class: 'category_article_title'))
-        concat(image_tag(index_latest_category_article_image(category), onerror: "this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'"))
+          concat(content_tag(:h2, category.name, class: 'category_name'))
+          concat(content_tag(:p, index_latest_category_article(category), class: 'category_article_title'))
+          concat(image_tag(index_latest_category_article_image(category), onerror: "this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'"))
         end
       end
     end
   end
-  # rubocop:disable Style/GuardClause
 
   private
 
@@ -102,5 +103,6 @@ module HomeHelper
     @week_category = feautured_category
     @week_article = @week_category.articles.find_weeks_article unless @week_category.nil?
   end
+  # rubocop:enable Layout/LineLength
   # rubocop:enable Style/GuardClause
 end
