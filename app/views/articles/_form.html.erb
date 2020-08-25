@@ -1,0 +1,11 @@
+    <%= form_for @article do |f| %>
+    <div class="article_form" style="margin-top: 0px; padding: 0px; height: 680px;">
+      <p>Title:</p>
+      <%= f.text_field :title, placeholder: 'Article title', class: 'article_title' %>
+      <p>Body:</p>
+      <%= f.text_area :text, placeholder: 'Article body', class: 'article_text' %>
+      <p>Image url: </p>
+      <%= f.text_field :image, placeholder: 'Image url', class: 'image_path' %><br>
+      <%= f.submit button_message, class: 'submit_btn' %>
+    </div>
+    <% end %>

@@ -1,0 +1,20 @@
+<nav class="columns">
+  <div class="column is-one-quarter">
+    <p>Company logo</p>
+  </div>
+  <div class="column">
+    <div class="columns">
+      <div class="column nav_main_paths">
+        <%= generate_link(('HOME'), root_path) %>
+        <%= generate_link('ARTICLES', articles_path) %>
+        <%= generate_link('CATEGORIES', categories_path) %>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="columns nav_user_paths">
+      <%= generate_links_user_logged %>
+      <%= generate_link_no_user %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,25 @@
+      <div class="top_articles columns is-gapless is-multiline">
+        <article class="most_voted_article column is-three-quarters-desktop">
+          <div class="flex_uperline">
+            <div class="most_voted_border_1"></div>
+            <div class="most_voted_border_2"></div>
+          </div>
+          <a class="article_showcase" href="<%= most_voted_article_path %>">
+            <h1 class="most_voted_article_title"><%= most_voted_article_title %></h1>
+            <img src="<%= most_voted_article_image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+          </a>
+        </article>
+        <article class="week_category column is-one-quarters">
+          <a href="<%= feautured_category_path  %>">
+            <h1>Week's category article:</h1>
+            <h2 class="category_name"><%= feautured_category_name %></h2>
+            <p class="category_article_title"><%= feautured_category_article_title %></p>
+            <img src="<%= feautured_category_article_image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+          </a>
+        </article>
+      </div>
+    <div class="columns is-gapless is-multiline categories_articles">
+      <% @categories.category_prior.each do |category| %>
+        <%= prior_categories(category) %>
+      <% end %>
+    </div>

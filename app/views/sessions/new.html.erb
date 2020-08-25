@@ -1,0 +1,7 @@
+    <div class="login_form new_user">
+      <%= form_for :session, url: sessions_path() do |f| %>
+        <p>User name:</p>
+        <%= f.text_field :name, placeholder: 'Username' %><br>
+        <%= f.submit 'LOGIN', class: 'submit_btn' %>
+      <% end %>
+    </div>

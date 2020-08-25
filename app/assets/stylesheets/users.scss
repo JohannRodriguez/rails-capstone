@@ -1,0 +1,171 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_profile {
+  width: 100% !important;
+  margin: auto;
+}
+
+.profile_most_recent_article {
+  margin-bottom: 5px;
+}
+
+.user_profile p,
+.user_profile a {
+  color: black;
+}
+
+.profile_most_recent_article_info {
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+.profile_article,
+.profile_options {
+  background-color: white;
+  padding: 0;
+}
+
+
+.profile_options,
+.profile_article {
+  height: 280px;
+}
+
+.profile_article,
+.profile_second_article {
+  position: relative;
+}
+
+.profile_article .profile_article_title {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  bottom: -10px;
+}
+
+.profile_article_title h3 {
+  color: #fa5f00;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 60px);
+}
+
+.profile_article_title p {
+  color: #4e443f;
+  font-weight: bold;
+}
+
+.profile_most_recent_article .profile_article_title {
+  display: flex;
+  justify-content: space-between !important;
+  padding: 0 20px;
+  margin-top: 25px;
+  width: 100% !important;
+}
+
+.profile_second_article .profile_article_info {
+  overflow: hidden;
+  height: 105px;
+  padding: 0 20px;
+}
+
+.profile_second_article .profile_article_title {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.profile_second_article img {
+  width: 100%;
+  height: 60%;
+}
+
+.profile_article .profile_article_info {
+  padding: 20px;
+  padding-bottom: 0;
+  position: relative;
+  height: 300px;
+  height: 220px;
+  overflow: hidden;
+}
+
+
+.profile_article .profile_article_info_text {
+
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.profile_article img {
+  width: 60%;
+  height: 220px;
+  float: left;
+  margin-bottom: 60px;
+}
+
+.profile_article .profile_article_info > p {
+  margin-right: 0 !important;
+}
+
+.profile_article_info_categories {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile_article .profile_article_title {
+  position: absolute;
+  width: calc(100% - 40px);
+  bottom: 20px;
+}
+
+.profile_article_text {
+  background-color: blue;
+  width: 300px;
+  height: auto;
+}
+
+.profile_options {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.profile_options p {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 90px;
+}
+
+.profile_options a {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.new_user {
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 80px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.new_user p {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.new_user .submit_btn {
+  margin-bottom: 10px;
+}

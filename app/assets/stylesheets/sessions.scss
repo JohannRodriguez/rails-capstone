@@ -1,0 +1,32 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_form {
+  margin-top: 60px;
+}
+
+.new_user {
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 80px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.new_user p {
+  color: #fa5f00;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.new_user .submit_btn {
+  margin-bottom: 10px;
+}
+
+.submit_btn:hover {
+  cursor: pointer;
+}

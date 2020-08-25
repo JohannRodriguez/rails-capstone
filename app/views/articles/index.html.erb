@@ -1,0 +1,16 @@
+    <section class="articles_index_section columns is-multiline">
+      <% @article.created_at_sort.each do |article| %>
+        <article class="articles_index_article column is-one-fifth">
+          <div class="articles_index_article_title">
+            <h3><%= article.title %></h3>
+          </div>
+          <img src="<%= article.image %>" width="150px" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+          <a href="<%= article_path(id: article.id) %>">
+            <div class="articles_index_hover">
+              <p class="articles_index_hover_author"><%= article.author.name %></p>
+              <p class="articles_index_hover_text"><%= article.text %></p>
+            </div>
+          </a>
+        </article>
+      <% end %>
+    </section>

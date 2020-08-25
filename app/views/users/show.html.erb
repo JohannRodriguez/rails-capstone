@@ -1,0 +1,26 @@
+    <section class="user_profile columns is-multiline">
+      <article class="profile_options column is-one-quarter">
+        <p><%= link_to 'Favorites',  saved_articles_index_path(id: @user.id) %> <%= fa_icon "heart" %></p>
+        <p><%= link_to 'New Article', new_article_path%> <%= fa_icon "edit" %></p>
+        <p><%= link_to 'Logout', delete_session_path %> <%= fa_icon "arrow-circle-right"%></p>
+      </article>
+      <% @article.each do |article| %>
+        <article class="profile_article column is-one-quarter">
+          <a href="<%= article_path(:id => article.id) %>">
+            <img src="<%= article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+            <div class="profile_article_info">
+              <p class="profile_article_info_categories">
+                <%  article.categories.each do |category| %>
+                  • <%= category_name(category) %>
+                <% end %>
+              </p>
+              <p class="profile_article_info_text"><%= article.text %></p>
+            </div>
+          </a>
+          <div class="profile_article_title">
+            <h3><%= article.title%></h3>
+            <p><%= article.votes.length %> <%= user_index_votes(article) %></p>
+          </div>
+        </article>
+      <% end %>
+    </section>

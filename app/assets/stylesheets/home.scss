@@ -1,0 +1,144 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.no_votes {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #fa5f00;
+}
+
+.week_category {
+  position: relative;
+}
+
+.week_category h1 {
+  position: absolute;
+  left: 15px;
+  color: #fa5f00;
+  top: 10px;
+  font-weight: bold;
+}
+
+.week_category h2 {
+  color: white;
+  top: 25px;
+}
+
+.top_articles {
+  height: 380px;
+  margin-bottom: 0 !important;
+}
+
+.categories_articles a {
+  transition: 0.2s;
+}
+
+.flex_uperline {
+  display: flex;
+}
+
+.most_voted_border_1 {
+  background-color: #e9062f;
+  height: 4px;
+  width: 35%;
+}
+
+.most_voted_border_2 {
+  background-color: #837e7a;
+  height: 4px;
+  width: 100%;
+}
+
+.categories_articles .article_showcase {
+  height: 200px;
+}
+
+.categories_articles {
+  height: 200px;
+  margin-bottom: 0;
+}
+
+.top_articles img {
+  width: 100%;
+  height: 380px;
+}
+
+.top_articles .article_showcase img {
+  height: 380px;
+}
+
+.categories_articles img {
+  height: 200px
+}
+
+.article_showcase {
+  position: relative;
+  width: 100%;
+}
+
+.article_showcase img {
+  width: 100%;
+}
+
+h1 {
+  color: orange;
+}
+
+.most_voted_article_title {
+  bottom: 0px;
+  left: 0;
+  position: absolute;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  z-index: 1;
+  color: #fa5f00;
+  font-weight: bold;
+}
+
+.category_name {
+  position: absolute;
+  border-bottom: 3px solid #f9f909;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+a,
+p {
+  color: white;
+}
+
+.category_article_title {
+  bottom: 0;
+  position: absolute;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.categories_articles a:hover {
+  color: #fa5f00;
+  transition: 0.2s;
+}
+
+.week_category {
+  position: relative;
+  height: 380px;
+}
+
+.week_category p {
+  transition: 0.2s;
+}
+
+.week_category img {
+  height: 100%;
+}
+
+.most_voted_article {
+  position: relative;
+  height: 496px;
+}
+
+.most_voted_article img {
+  height: 100%;
+}

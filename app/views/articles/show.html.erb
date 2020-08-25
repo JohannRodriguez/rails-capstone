@@ -1,0 +1,27 @@
+    <article class="article_show bottom_page_margin">
+      <div class="article_show_image_section">
+        <img src="<%= @article.image %>" onerror="this.onerror=null; this.src='https://farm5.staticflickr.com/4363/36346283311_1dec5bb2c2.jpg'">
+        <div class="article_show_name_votes">
+          <p><%= @user.name %></p>
+          <p><%= @article.votes.count %> <%= multiple_votes? %></p>
+        </div>
+        <div class="article_show_vote_save">
+          <p><%= save_article_show %></p>
+          <p><%= vote %></p>
+        </div>
+      </div>
+      <div class="article_show_text">
+        <h1><%= @article.title %></h1>
+        <p><%= @article.text %></p>
+      </div>
+      <div class="author_options">
+        <p class="article_show_categories">
+          <% @article.categories.each do |category| %>
+            • <%= link_to category.name, category_path(id: category.id) %>
+          <% end %>
+        </p>
+        <%= author_edits %>
+        <p>Add a category:</p>
+        <%= article_add_categories_html %>
+      </div>
+    </article>
